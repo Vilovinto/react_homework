@@ -1,4 +1,4 @@
-export interface iReviewsModel {
+export interface IReviewsModel {
     rating: number,
     comment: string,
     date: string,

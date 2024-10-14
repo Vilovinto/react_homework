@@ -1,39 +1,48 @@
 import React, {FC} from 'react';
 import {IProductModel} from "../models/IProductModel";
-type TypeProps1 = ({item:IProductModel})
-const Product:FC<TypeProps1> = ({item}) => {
+import {IReviewsModel} from "../models/IReviewsModel";
+type TypeProps = ({item:IProductModel})
+const Product:FC<TypeProps> = ({item}) => {
     return (
         <div>
             <h3>{item.title}</h3>
-            <p>{item.description}</p>
-            <p>{item.category}</p>
-            <p>{item.price}</p>
-            <p>{item.discountPercentage}</p>
-            <p>{item.rating}</p>
-            <p>{item.stock}</p>
-            <p>{item.tags}</p>
-            <p>{item.brand}</p>
-            <p>{item.sku}</p>
-            <p>{item.weight}</p>
-            <p>{item.width}</p>
-            <p>{item.height}</p>
-            <p>{item.depth}</p>
-            <p>{item.warrantyInformation}</p>
-            <p>{item.shippingInformation}</p>
-            <p>{item.availabilityStatus}</p>
-            <p>{item.rating}</p>
-            <p>{item.comment}</p>
-            <p>{item.date}</p>
-            <p>{item.reviewerName}</p>
-            <p>{item.reviewerEmail}</p>
-            <p>{item.returnPolicy}</p>
-            <p>{item.minimumOrderQuantity}</p>
-            <p>{item.createdAt}</p>
-            <p>{item.updatedAt}</p>
-            <p>{item.barcode}</p>
-            <p>{item.qrCode}</p>
-            <img src= {item.images} alt= {item.title} />
-            <img src= {item.thumbnail} alt= {item.title} />
+            <p>description: {item.description}</p>
+            <p>category: {item.category}</p>
+            <p>price: {item.price}</p>
+            <p>discountPercentage: {item.discountPercentage}</p>
+            <p>rating: {item.rating}</p>
+            <p>stock: {item.stock}</p>
+            <p>tags: {item.tags}</p>
+            <p>brand: {item.brand}</p>
+            <p>sku: {item.sku}</p>
+            <p>weight: {item.weight}</p>
+            <p> dimensions:</p>
+            <p>width: {item.dimensions.width}</p>
+            <p>height: {item.dimensions.height}</p>
+            <p>depth: {item.dimensions.depth}</p>
+            <p>warrantyInformation: {item.warrantyInformation}</p>
+            <p>shippingInformation: {item.shippingInformation}</p>
+            <p>availabilityStatus: {item.availabilityStatus}</p>
+            <div> {item.reviews.map((review: IReviewsModel, index: number) => (
+                <div key={index}>
+                        <p>reviews: </p>
+                        <p>rating: {review.rating}</p>
+                        <p>comment: {review.comment}</p>
+                        <p>date: {review.date}</p>
+                        <p>reviewerName: {review.reviewerName}</p>
+                        <p>reviewerEmail: {review.reviewerEmail}</p>
+                </div>))} </div>
+            <p>returnPolicy: {item.returnPolicy}</p>
+            <p>minimumOrderQuantity: {item.minimumOrderQuantity}</p>
+            <p>meta: </p>
+            <p>createdAt: {item.meta.createdAt}</p>
+            <p>updatedAt: {item.meta.updatedAt}</p>
+            <p>barcode: {item.meta.barcode}</p>
+            <p>qrCode: {item.meta.qrCode}</p>
+            <div> {item.images.map((image: string) => (
+                <img src={image} alt = {item.title}/>
+                ))} </div>
+            <img src={item.thumbnail} alt={item.title}/>
         </div>
     );
 };

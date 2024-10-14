@@ -1,5 +1,3 @@
-import {IProductModel} from "./components/models/IProductModel";
-
 export const apiProductsObject = {
     "products": [
         {
