@@ -39,7 +39,7 @@ const Product:FC<TypeProps> = ({item}) => {
             <p>updatedAt: {item.meta.updatedAt}</p>
             <p>barcode: {item.meta.barcode}</p>
             <p>qrCode: {item.meta.qrCode}</p>
-            <div> {item.images.map((image: string) => (
+            <div> {item.images.map((image: string, index: number) => (
                 <div key={index}>
                     <img src={image} alt = {item.title}/>
                 </div>))} </div>

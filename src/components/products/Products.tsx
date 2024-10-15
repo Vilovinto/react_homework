@@ -8,7 +8,7 @@ const Products: FC = () => {
     return (
         <div>
             {
-                products.map((product: IProductModel) => (<Product item={product}/>))
+                products.map((product: IProductModel, index: number) => (<div key={index}> <Product item={product}/> </div>))
             }
         </div>
     );
