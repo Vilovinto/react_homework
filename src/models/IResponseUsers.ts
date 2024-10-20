@@ -1,6 +1,6 @@
 import {IUser} from "./IUser";
 
-export interface IResponceUsers {
+export interface IResponseUsers {
     users: IUser[];
     total: number;
     skip: number;
