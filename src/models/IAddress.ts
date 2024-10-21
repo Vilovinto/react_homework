@@ -3,8 +3,10 @@ export interface IAddress {
     suite: string;
     city: string;
     zipcode: string;
-    geo: {
-        lat: string;
-        lng: string;
-    };
+    geo: IGeo;
 }
+
+interface IGeo {
+    lat: string;
+    lng: string;
+};
