@@ -9,4 +9,4 @@ export interface IAddress {
 interface IGeo {
     lat: string;
     lng: string;
-};
+}
