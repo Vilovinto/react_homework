@@ -1,30 +1,40 @@
 import axios from "axios";
 import {IUser} from "../models/IUser";
-import {IPost} from "../models/IPost";
-import {IComment} from "../models/IComment";
 
 const axiosInstance = axios.create({
     baseURL: 'https://jsonplaceholder.typicode.com',
     headers: {}
 });
 
+const getAll = async <T> (endpoint:string): Promise<T> => {
+    const {data} = await axiosInstance.get<T>(endpoint);
+    return data;
+}
+
 export const apiService = {
     userService: {
-        getAll:async (): Promise<IUser[]> => {
-            const {data} = await axiosInstance.get<IUser[]>('/users');
-            return data;
-        }
+        getAll
     },
     postService: {
-        getAll:async (): Promise<IPost[]> => {
-            const {data} = await axiosInstance.get<IPost[]>('/posts');
-            return data;
-        }
+        getAll
     },
     commentService: {
-        getAll:async (): Promise<IComment[]> => {
-            const {data} = await axiosInstance.get<IComment[]>('/comments');
-            return data;
-        }
+        getAll
+    },
+}
+export const getAllDetails = async <T> (endpoint: string): Promise<T> => {
+    let {data} = await axiosInstance.get<T>(endpoint);
+    return data;
+}
+
+export const apiServiceDetails = {
+    userServiceDetails: {
+        getAllDetails
+    },
+    postServiceDetails: {
+        getAllDetails
+    },
+    commentServiceDetails: {
+        getAllDetails
     },
 }
