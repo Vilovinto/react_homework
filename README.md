@@ -1,5 +1,6 @@
-# Project Location
-https://github.com/Vilovinto/react_homework
+# Homework 3
+Взяти з dummyjson будь-який ендпоінт, який повертає багато об'єктів (products,carts,users etc...), та реалізувати пагінацію цих об'єктів. Крок пагінації ви визначаєте самостійно
+
 
 ## Available Scripts
 
